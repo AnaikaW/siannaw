@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wordle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-color: #f9f9f9;">
+    
+    <h6>Wordle</h6> <!-- Added title for Wordle -->
+    <p>Can you guess the mystery word?</p> 
+    <br><br/>
+
+    <!-- Guess grid (Wordle board) -->
+    <div class="guess-grid"></div>
+    
+    <!-- Input bar for typing guesses -->
+    <div class="guess-input-container">
+        <input type="text" id="guess-input" maxlength="5" placeholder="Type your guess..." />
+        <button id="submit-guess">Submit</button>
+        
+    </div>
+    
+    <!-- Alert messages -->
+    <div class="alert error" id="error-alert" style="display: none;">Invalid guess!</div>
+    <div class="alert success" id="success-alert" style="display: none;">Congratulations!</div>
+
+    <!-- Next button -->
+    <div id="next-page" style="display: none;">
+        <br><br/>
+        <button id="wordle-next">Next</button>
+    </div>
+    <br><br/>
+    <button id="reset-game">Reset</button> <!-- Added reset button -->
+
+    <script src="script.js"></script>
+</body>
+</html>

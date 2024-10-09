@@ -1,0 +1,373 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1526461262602-57631fbd9e7a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDB8fGJhY2tncm91bmR8ZW58MHx8fHwxNjkwMzU3NjI1&ixlib=rb-4.0.3&q=80&w=1080') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #FF69B4; /* Hot pink */
+    margin-bottom: 20px;
+}
+h2 {
+    font-size: 2.5em;
+    color: #FF69B4; /* Hot pink */
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 2.5em;
+    color: black; /* Hot pink */
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-size: 1em;
+    color: black; /* Hot pink */
+    margin-bottom: 20px;
+    
+}
+
+h5 {
+    font-size: 1em;
+    color: black; /* Hot pink */
+    margin-bottom: 20px;
+}
+
+.guess-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tile {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #333;
+    border: 2px solid #FFB6C1; /* Light pink */
+    border-radius: 10px;
+    background: #ffffff; /* White */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s;
+}
+
+/* Correct letter in correct place */
+.tile.correct {
+    background-color: #6aaa64; /* Green */
+    border-color: #6aaa64;
+    color: white;
+}
+
+/* Correct letter in wrong place */
+.tile.wrong-location {
+    background-color: #c9b458; /* Yellow */
+    border-color: #c9b458;
+    color: white;
+}
+
+/* Incorrect letter */
+.tile.wrong {
+    background-color: #787c7e; /* Grey */
+    border-color: #787c7e;
+    color: white;
+}
+
+/* Styling for the input bar */
+.guess-input-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#guess-input {
+    width: 250px;
+    padding: 10px;
+    font-size: 1.2em;
+    border: 2px solid #FFB6C1; /* Light pink */
+    border-radius: 5px;
+    outline: none;
+}
+
+#submit-guess {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: #FFB6C1;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s;
+}
+
+#submit-guess:hover {
+    background-color: #FF69B4;
+}
+
+/* Alert styling */
+.alert {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.alert.error {
+    background: #FF4500; /* Orange Red */
+}
+
+.alert.success {
+    background: #32CD32; /* Lime green */
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.shake {
+    animation: shake 0.5s ease;
+}
+
+.connects-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+    width: 40%;
+}
+
+.word {
+    padding: 10px;
+    margin: 10px;
+    background-color: #FFB6C1;
+    border-radius: 5px;
+    cursor: move;
+    text-align: center;
+}
+
+.grouping-area {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.group {
+    width: 150px;
+    height: 200px;
+    background-color: #F0E68C;
+    border: 2px dashed #FF69B4;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffff;
+}
+
+header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.envelope {
+    cursor: pointer; /* Change cursor to pointer on hover */
+    margin-bottom: 20px; /* Space between envelope and card */
+}
+
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+
+.card-image {
+    width: 100%; /* Adjust as needed */
+    border-radius: 10px; /* Optional rounded corners */
+}
+
+.gif-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.birthday-gif {
+    width: 50px; /* Adjust size as needed */
+    margin: 0 10px;
+}
+
+.confetti {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* So clicks pass through */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.card {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffff; /* Light background color */
+    border: 2px solid #ff69b4; /* Pink border */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card h1 {
+    color: #ff69b4; /* Pink text for the heading */
+}
+
+.card p {
+    color: #333; /* Dark text for the paragraphs */
+}
+
+.card-image {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px 10px 0 0; /* Rounded corners at the top */
+}
+
+.gif-container {
+    display: flex;
+    align-items: center; /* Center aligns the items vertically */
+    justify-content: center; /* Centers the items horizontally */
+    margin: 10px 0; /* Adds some space around the container */
+}
+
+.birthday-gif {
+    width: 50px; /* Adjust the size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 10px; /* Adds space between the GIFs and the heading */
+}
+
+#wordle-next {
+    padding: 10px 30px; /* Increase the padding for a larger button */
+    font-size: 18px; /* Increase the font size */
+    background-color: #A2C2E0; /* Change the background color if needed */
+    color: black; /* Text color */
+    border: none; /* Remove the default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+#wordle-next:hover {
+    background-color: #A2C2E0; /* Darker shade for hover effect */
+}
+
+/* Add this to your existing styles.css */
+
+button {
+    padding: 10px 30px; /* Increase the padding */
+    font-size: 16px; /* Increase the font size */
+    cursor: pointer; /* Change cursor to pointer */
+    margin: 5px; /* Add some margin around the buttons */
+}
+
+/* Optionally, style the reset button specifically */
+#reset-game {
+    background-color: #D6B5E8; /* Change the background color if desired */
+    color: black; /* Change text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Optional: rounded corners */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+}
+
+#reset-game:hover {
+    background-color: #D6B5E8; /* Darker shade on hover */
+}
+
+.instructions-container {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+h5 {
+    font-size: 1.5em;
+}
+
+h6 {
+    font-size: 2.5em;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+.birthday-gif {
+    display: block; /* Ensures the GIF is a block element */
+    margin: 0 auto; /* Centers the GIF */
+    width: 300px; /* Adjust size as needed */
+}

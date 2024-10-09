@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connections Game</title>
+    <link rel="stylesheet" href="/styles.css">
+    <br><br/>
+    <br><br/>
+    <style>
+        /* styles.css */
+
+        body {
+            font-family: sans-serif; /* Change to the font used in Wordle */
+            background-color: #ffffff; /* A light background color */
+            color: #333; /* Dark text color for readability */
+        }
+        
+        header {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .connections-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* Four columns */
+            gap: 10px; /* Space between items */
+            max-width: 600px; /* Limit the width of the grid */
+            margin: 0 auto; /* Center the grid */
+        }
+        
+        .connections-item {
+            background-color: #FFB6C1; /* Original background color */
+            border: 2px solid #ddd; /* Light border for definition */
+            border-radius: 5px; /* Rounded corners */
+            padding: 20px; /* Padding inside each item */
+            text-align: center; /* Center text inside the items */
+            font-size: 1.5rem; /* Font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth transition for background color */
+        }
+        
+        .connections-item:hover {
+            background-color: #FFB6C1; /* Light highlight color on hover */
+        }
+        
+        .merged-item {
+            display: flex; /* Use flex to center content */
+            justify-content: center; /* Center text horizontally */
+            align-items: center; /* Center text vertically */
+            border-radius: 5px; /* Rounded corners */
+            margin-bottom: 10px; /* Space below merged items */
+            padding: 20px; /* Padding inside merged item */
+            font-size: 1.5rem; /* Font size */
+            color: #000000; /* White text color for contrast */
+        }
+        
+        button {
+            font-size: 1.5rem; /* Match button size */
+            padding: 10px 20px; /* Padding inside button */
+            margin: 10px 5px; /* Margin between buttons */
+            border: none; /* Remove default border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: background-color 0.3s ease; /* Smooth transition for background color */
+        }
+        
+        button:hover {
+            opacity: 0.8; /* Slightly fade on hover */
+        }
+        
+        /* Add specific colors for each merged group */
+        .merged-item:nth-child(1) {
+            background-color: #FDFD96; /* Yellow */
+        }
+        
+        .merged-item:nth-child(2) {
+            background-color: #B2E2B3; /* Green */
+        }
+        
+        .merged-item:nth-child(3) {
+            background-color: #A2C2E0; /* Blue */
+        }
+        
+        .merged-item:nth-child(4) {
+            background-color: #D6B5E8; /* Purple */
+        }
+        
+        #message-box {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 20px 0; /* Space around message box */
+        }
+        .merged-item {
+            display: flex; /* Use flex to center content */
+            justify-content: center; /* Center text horizontally */
+            align-items: center; /* Center text vertically */
+            border-radius: 5px; /* Rounded corners */
+            margin-bottom: 10px; /* Space below merged items */
+            padding: 20px; /* Padding inside merged item */
+            font-size: 1.5rem; /* Font size */
+            color: #000000; /* White text color for contrast */
+            grid-column: span 4; /* Span the full width of the grid */
+        }
+                
+        .reset-button-container {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            margin: 20px 0; /* Add some vertical space */
+        }
+        
+        #reset-button {
+            padding: 10px 20px; /* Increase padding for a larger button */
+            font-size: 16px; /* Adjust font size as needed */
+            background-color: #D6B5E8; /* Change the background color if needed */
+
+        }
+        
+        .next-button-container {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        margin: 20px 0; /* Add some vertical space */
+        }
+
+        #connections-next {
+        padding: 10px 20px; /* Increase padding for a larger button */
+        font-size: 16px; /* Adjust font size as needed */
+        background-color: #A2C2E0
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Connections</h1>
+        <p>Can you find the connections?</p>
+    </header>
+
+    <!-- Connections Section -->
+    <div class="connections-grid">
+        <div class="connections-item">Draymond</div>
+        <div class="connections-item">Gideon</div>
+        <div class="connections-item">Shadow</div>
+        <div class="connections-item">Yapper</div>
+        <div class="connections-item">Bardia</div>
+        <div class="connections-item">Honey</div>
+        <div class="connections-item">Cs</div>
+        <div class="connections-item">Sebastian</div>
+        <div class="connections-item">Hater</div>
+        <div class="connections-item">Ladoo</div>
+        <div class="connections-item">Sianna</div>
+        <div class="connections-item">Smarty</div>
+        <div class="connections-item">Goofy</div>
+        <div class="connections-item">Sisi</div>
+        <div class="connections-item">Choti</div>
+        <div class="connections-item">Eric</div>
+    </div>
+    <div id="message-box">Start finding connections!</div>
+    <br><br/>
+    <div class="reset-button-container">
+        <button id="reset-button">Reset Game</button>
+    </div>
+    <div class="next-button-container">
+        <button id="connections-next" style="display: none;">Next</button>
+    </div>
+        
+    
+    <!-- Scripts -->
+    <script src="connects.js"></script>
+</body>
+</html>
